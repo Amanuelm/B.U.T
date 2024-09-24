@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SearchPage extends StatefulWidget {
   @override
@@ -7,7 +8,13 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   final TextEditingController _controller = TextEditingController();
-  List<String> _allItems = ['apple', 'banana', 'avocado', 'grape', 'mango'];
+  List<String> _allItems = [
+    'Manchester United',
+    'Barcelona',
+    'Real Madrid',
+    'Liverpool',
+    'Bayern Munich'
+  ];
   List<String> _filteredItems = [];
 
   @override
@@ -42,7 +49,13 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search Page'),
+        title: Text(
+          'Search Page',
+          style: GoogleFonts.acme(
+            fontSize: 24, // Set font size
+            color: Color(0xFF35732F), // Set font color to black
+          ),
+        ),
         backgroundColor: Color(0xFF9AC0A9),
       ),
       body: Container(
@@ -60,6 +73,23 @@ class _SearchPageState extends State<SearchPage> {
               decoration: InputDecoration(
                 labelText: 'Search',
                 border: OutlineInputBorder(),
+                hintText: 'Type to search...', // Adding hint text
+                hintStyle: TextStyle(
+                  // Custom style for hint text
+                  color: Colors.grey, // Hint text color
+                  fontStyle: FontStyle.italic, // Hint text style
+                  fontSize: 18, // Hint text size
+                ),
+                fillColor: Colors.lightBlue[
+                    50], // Change this to your desired background color
+                filled: true,
+              ),
+              style: TextStyle(
+                // Custom style for input text
+                fontSize: 18, // Input text size
+                color: Colors.black, // Input text color
+                fontWeight: FontWeight.bold, // Input text weight
+                fontStyle: FontStyle.normal, // Input text style (normal)
               ),
             ),
             SizedBox(height: 10),
