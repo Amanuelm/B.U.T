@@ -41,8 +41,17 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Search Page')),
-      body: Padding(
+      appBar: AppBar(
+        title: Text('Search Page'),
+        backgroundColor: Color(0xFF9AC0A9),
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/background2.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
@@ -59,7 +68,28 @@ class _SearchPageState extends State<SearchPage> {
                 itemCount: _filteredItems.length,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    title: Text(_filteredItems[index]),
+                    title: Container(
+                        padding:
+                            EdgeInsets.all(8), // Padding inside the container
+                        color: Color(0xFF9AC0A9), // Background color
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                _filteredItems[index],
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  color: Color(0xFF35732F),
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              ClipOval(
+                                  child: Image.asset(
+                                'assets/images/icon.png', // Path to the image asset
+                                width: 40, // Adjust the size of the image
+                                height: 40,
+                              )),
+                            ])),
                     onTap: () => _onItemSelected(_filteredItems[index]),
                   );
                 },
