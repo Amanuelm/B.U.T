@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:google_fonts/google_fonts.dart';
-import 'biuld.dart';
+import 'build.dart';
 import 'search.dart';
 
 class choice extends StatefulWidget {
@@ -46,10 +46,10 @@ class _choiceState extends State<choice> {
                   ),
                 ),
                 onPressed: () {
-                  /*Navigator.push(
+                  Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BiuldPage()),
-                  );*/
+                    MaterialPageRoute(builder: (context) => BbuildPage()),
+                  );
                 },
                 child: Text(
                   'Create new team',
