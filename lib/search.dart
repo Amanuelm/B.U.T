@@ -31,8 +31,6 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   void _onItemSelected(String item) {
-    // Here you can call build.dart or navigate to another page
-    // For example:
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => BuildPage(name: item)),
