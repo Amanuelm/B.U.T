@@ -48,7 +48,7 @@ class _choiceState extends State<choice> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BbuildPage()),
+                    MaterialPageRoute(builder: (context) => BuildPage()),
                   );
                 },
                 child: Text(

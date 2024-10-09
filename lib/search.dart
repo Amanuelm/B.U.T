@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'build.dart';
 
 class SearchPage extends StatefulWidget {
   @override
@@ -33,7 +34,7 @@ class _SearchPageState extends State<SearchPage> {
   void _onItemSelected(String item) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => BuildPage(name: item)),
+      MaterialPageRoute(builder: (context) => BuildPage()),
     );
   }
 
@@ -125,22 +126,6 @@ class _SearchPageState extends State<SearchPage> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class BuildPage extends StatelessWidget {
-  final String name;
-
-  BuildPage({required this.name});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Build Page')),
-      body: Center(
-        child: Text('Selected item: $name'),
       ),
     );
   }
